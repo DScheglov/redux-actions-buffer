@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "compile": "babel src --out-dir lib",
-    "test": "jest --coverage | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test": "jest --coverage",
     "prepublish": "npm run test && npm run compile"
   },
   "keywords": [
@@ -22,7 +22,6 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "coveralls": "^3.0.0",
     "install": "^0.10.2",
     "jest": "^22.0.4",
     "npm": "^5.6.0",
