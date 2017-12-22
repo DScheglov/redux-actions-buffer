@@ -5,8 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "compile": "babel src --out-dir lib",
-    "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "prepublish": "npm run test && npm run compile"
+    "test": "npm run test:local && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:local": "jest --coverage",
+    "prepublish": "npm run test:local && npm run compile"
   },
   "keywords": [
     "redux",
