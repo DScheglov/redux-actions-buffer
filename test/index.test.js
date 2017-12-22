@@ -6,14 +6,15 @@ import {
   startBuffering,
   destroyBuffer,
   flushBuffer,
-  actionsBuffer
+  actionsBuffer,
+  arrayToBatch,
 } from '../src';
 
 
 const createAppStoreExpl = (reducers, initialState = {}) => createStore(
   enableBatching(combineReducers(reducers)),
   initialState,
-  applyMiddleware(actionsBuffer)
+  applyMiddleware(arrayToBatch, actionsBuffer)
 );
 
 const allActions = (state = [], action) => [...state, action];
@@ -39,7 +40,7 @@ export const mainSuite = (prefix, createAppStore) => describe(prefix, () => {
     expect(subscriber.mock.calls.length).toBe(3);
   });
 
-  test('created store should process the explicit batch of actions', () => {
+  test('created store should process the explicit batch of actions as array', () => {
     const store = createAppStore({ lastActionType });
     const subscriber = jest.fn();
     store.subscribe(subscriber);
@@ -48,6 +49,19 @@ export const mainSuite = (prefix, createAppStore) => describe(prefix, () => {
       { type: 'SECOND' },
       { type: 'THIRD' },
     ]));
+    expect(store.getState()).toEqual({ lastActionType: 'THIRD' });
+    expect(subscriber.mock.calls.length).toBe(1);
+  });
+
+  test('created store should process the explicit batch of actions asa args list', () => {
+    const store = createAppStore({ lastActionType });
+    const subscriber = jest.fn();
+    store.subscribe(subscriber);
+    store.dispatch(batch(
+      { type: 'FIRST' },
+      { type: 'SECOND' },
+      { type: 'THIRD' },
+    ));
     expect(store.getState()).toEqual({ lastActionType: 'THIRD' });
     expect(subscriber.mock.calls.length).toBe(1);
   });
