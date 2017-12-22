@@ -1,0 +1,33 @@
+{
+  "name": "redux-batch-buffer",
+  "version": "1.0.0",
+  "description": "Buffering redux-actions before dispatch them in the batch",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "babel src --out-dir lib",
+    "test": "jest --coverage",
+    "prepublish": "npm run test && npm run compile"
+  },
+  "keywords": [
+    "redux",
+    "batch",
+    "buffer",
+    "actions",
+    "flush",
+    "clear"
+  ],
+  "author": "Dmitry.Scheglov <dmitry.scheglov@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "install": "^0.10.2",
+    "jest": "^22.0.4",
+    "npm": "^5.6.0",
+    "redux": "^3.7.2"
+  },
+  "peerDependencies": {
+    "redux": "*"
+  }
+}

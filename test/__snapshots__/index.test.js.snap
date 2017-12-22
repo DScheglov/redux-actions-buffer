@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Explicitly applied High Ordered Reducer created store should bufferize actions and then process the batch 1`] = `
+Object {
+  "lastActionType": "@@redux/INIT",
+}
+`;
+
+exports[`Explicitly applied High Ordered Reducer creating a store 1`] = `
+Object {
+  "allActions": Array [
+    Object {
+      "type": "@@redux/INIT",
+    },
+  ],
+}
+`;
