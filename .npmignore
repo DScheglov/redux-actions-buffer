@@ -4,3 +4,5 @@ src
 coverage
 package-lock.json
 yarn.lock
+.coveralls.yml
+.travis.yml
