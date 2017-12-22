@@ -1,6 +1,6 @@
 {
   "name": "redux-batch-buffer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Buffering redux-actions before dispatch them in the batch",
   "main": "lib/index.js",
   "scripts": {
