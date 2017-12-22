@@ -132,9 +132,11 @@ you need.
    to create `batch`-action.
 
 2. **Dispatching array of actions**
+
    Apply `enableBatching` and apply `arrayToBatch`-middleware as far from reducer as it is possible.
 
 3. **Buffering**
+
    Apply `enableBatching` and `actionsBuffer`-middleware as close to reducers as it is possible.
 
 
