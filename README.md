@@ -1,4 +1,5 @@
-# redux-batch-buffer [![Build Status](https://travis-ci.org/DScheglov/redux-batch-buffer.svg?branch=master)](https://travis-ci.org/DScheglov/redux-batch-buffer) [![Coverage Status](https://coveralls.io/repos/github/DScheglov/redux-batch-buffer/badge.svg?branch=master)](https://coveralls.io/github/DScheglov/redux-batch-buffer?branch=master)
+# redux-batch-buffer
+[![Build Status](https://travis-ci.org/DScheglov/redux-batch-buffer.svg?branch=master)](https://travis-ci.org/DScheglov/redux-batch-buffer) [![Coverage Status](https://coveralls.io/repos/github/DScheglov/redux-batch-buffer/badge.svg?branch=master)](https://coveralls.io/github/DScheglov/redux-batch-buffer?branch=master)
 
 Buffering redux-actions before dispatch them in the batch.
 
